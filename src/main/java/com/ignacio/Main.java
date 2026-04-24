@@ -6,12 +6,12 @@ import com.ignacio.modelo.PrediccionDia;
 import com.ignacio.servicio.ServicioMeteo;
 import io.javalin.Javalin;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        // Probamos la API antes de levantar el servidor
         ServicioMeteo servicio = new ServicioMeteo();
         AnalizadorGolf analizador = new AnalizadorGolf();
 
@@ -32,11 +32,22 @@ public class Main {
                     analizador.calcular(dia));
         }
 
-        // Servidor Javalin
+        // cargar html
+
+        String html = new String(
+                Main.class.getResourceAsStream("/dashboard.html").readAllBytes(),
+                StandardCharsets.UTF_8
+        );
+
+        // cargar javalin
+
         Javalin app = Javalin.create().start(7000);
+
+        // ruta principal
+
         app.get("/", ctx -> {
-            ctx.contentType("text/plain; charset=utf-8");
-            ctx.result("⛳ Golf Weather Dashboard — OK");
+            ctx.contentType("text/html; charset=utf-8");
+            ctx.result(html);
         });
     }
 }
