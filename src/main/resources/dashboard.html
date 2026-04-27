@@ -97,37 +97,31 @@
             <div>
                 <p class="gm-hero-label">Golf weather · Asturias</p>
                 <p class="gm-hero-location">Oviedo</p>
-                <p class="gm-hero-date">Lunes, 20 de abril · 11:30</p>
+                <p class="gm-hero-date">{{FECHA}}</p>
             </div>
-            <div class="gm-pill"><div class="gm-pill-dot"></div>Birdie day</div>
+            <div class="gm-pill"><div class="gm-pill-dot"></div>{{PUNTUACION_HOY}}</div>
         </div>
         <div class="gm-hero-stats">
-            <div class="gm-hero-stat"><p class="gm-stat-label">Temperatura</p><p class="gm-stat-val">17<span class="gm-stat-unit">°C</span></p></div>
-            <div class="gm-hero-stat"><p class="gm-stat-label">Lluvia</p><p class="gm-stat-val">4<span class="gm-stat-unit">%</span></p></div>
-            <div class="gm-hero-stat"><p class="gm-stat-label">Viento</p><p class="gm-stat-val">12<span class="gm-stat-unit">km/h</span></p></div>
-            <div class="gm-hero-stat"><p class="gm-stat-label">Índice UV</p><p class="gm-stat-val">3<span class="gm-stat-unit"> mod</span></p></div>
+            <div class="gm-hero-stat"><p class="gm-stat-label">Temperatura</p><p class="gm-stat-val">{{TEMPERATURA}}<span class="gm-stat-unit">°C</span></p></div>
+            <div class="gm-hero-stat"><p class="gm-stat-label">Lluvia</p><p class="gm-stat-val">{{LLUVIA}}<span class="gm-stat-unit">%</span></p></div>
+            <div class="gm-hero-stat"><p class="gm-stat-label">Viento</p><p class="gm-stat-val">{{VIENTO}}<span class="gm-stat-unit">km/h</span></p></div>
+            <div class="gm-hero-stat"><p class="gm-stat-label">Índice UV</p><p class="gm-stat-val">{{UV}}<span class="gm-stat-unit"> mod</span></p></div>
         </div>
     </div>
 
     <p class="gm-section-label">Próximos 7 días</p>
     <div class="gm-forecast">
-        <div class="gm-day today"><p class="gm-day-name">Hoy</p><p class="gm-day-temp">17°</p><p class="gm-day-rain">4%</p><span class="gm-badge birdie">Birdie</span></div>
-        <div class="gm-day"><p class="gm-day-name">Mar</p><p class="gm-day-temp">19°</p><p class="gm-day-rain">6%</p><span class="gm-badge birdie">Birdie</span></div>
-        <div class="gm-day"><p class="gm-day-name">Mié</p><p class="gm-day-temp">13°</p><p class="gm-day-rain">78%</p><span class="gm-badge bogey">Bogey</span></div>
-        <div class="gm-day"><p class="gm-day-name">Jue</p><p class="gm-day-temp">15°</p><p class="gm-day-rain">42%</p><span class="gm-badge par">Par</span></div>
-        <div class="gm-day"><p class="gm-day-name">Vie</p><p class="gm-day-temp">14°</p><p class="gm-day-rain">35%</p><span class="gm-badge par">Par</span></div>
-        <div class="gm-day"><p class="gm-day-name">Sáb</p><p class="gm-day-temp">21°</p><p class="gm-day-rain">3%</p><span class="gm-badge birdie">Birdie</span></div>
-        <div class="gm-day"><p class="gm-day-name">Dom</p><p class="gm-day-temp">18°</p><p class="gm-day-rain">12%</p><span class="gm-badge birdie">Birdie</span></div>
+        {{FORECAST}}
     </div>
 
     <div class="gm-bottom">
         <div class="gm-card">
             <p class="gm-card-title">Detalles de hoy</p>
             <div class="gm-rows">
-                <div class="gm-row"><span class="gm-row-key">Sensación térmica</span><span class="gm-row-val">15°C</span></div>
-                <div class="gm-row"><span class="gm-row-key">Humedad</span><span class="gm-row-val">62%</span></div>
-                <div class="gm-row"><span class="gm-row-key">Dirección viento</span><span class="gm-row-val">NE</span></div>
-                <div class="gm-row"><span class="gm-row-key">Visibilidad</span><span class="gm-row-val">Excelente</span></div>
+                <div class="gm-row"><span class="gm-row-key">Sensación térmica</span><span class="gm-row-val">{{SENSACION}}°C</span></div>
+                <div class="gm-row"><span class="gm-row-key">Humedad</span><span class="gm-row-val">{{HUMEDAD}}%</span></div>
+                <div class="gm-row"><span class="gm-row-key">Dirección viento</span><span class="gm-row-val">{{DIRECCION_VIENTO}}</span></div>
+                <div class="gm-row"><span class="gm-row-key">Visibilidad</span><span class="gm-row-val">{{VISIBILIDAD}}</span></div>
             </div>
         </div>
         <div class="gm-card">
@@ -144,7 +138,7 @@
         <span class="gm-caddy-icon">⛳</span>
         <div>
             <p class="gm-caddy-label">Nota del caddy</p>
-            <p class="gm-caddy-text">Hoy y mañana son tu mejor ventana. <strong>El miércoles hay lluvia intensa, evítalo.</strong> El fin de semana vuelve a abrirse con buenas condiciones. Mejor franja hoy: entre las 10:00 y las 14:00.</p>
+            <p class="gm-caddy-text">{{NOTA_CADDY}}</p>
         </div>
     </div>
 
