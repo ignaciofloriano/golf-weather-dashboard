@@ -141,7 +141,53 @@
             <p class="gm-caddy-text">{{NOTA_CADDY}}</p>
         </div>
     </div>
-
 </div>
+<script>
+    // seleccionamos todas las tarjetas
+
+    const tarjetas = document.querySelectorAll('.gm-day');
+
+    tarjetas.forEach(tarjeta => {
+        tarjeta.addEventListener('click', () => {
+
+            // quitamos la clase today de todas las tarjetas
+
+            tarjetas.forEach(t => t.classList.remove('today'));
+
+            // se la ponemos a la tarjeta con click
+
+            tarjeta.classList.add('today');
+
+            // leemos los datos del día
+
+            const temp     = tarjeta.dataset.temp;
+            const lluvia   = tarjeta.dataset.lluvia;
+            const viento   = tarjeta.dataset.viento;
+            const uv       = tarjeta.dataset.uv;
+            const nombre   = tarjeta.dataset.nombre;
+            const punt     = tarjeta.dataset.puntuacion;
+
+            // actualizamos el principalñ con los datos del día
+
+            document.querySelector('.gm-hero-date').textContent = nombre;
+            document.querySelector('.gm-pill').innerHTML =
+                '<div class="gm-pill-dot"></div>' + punt;
+
+            // actualizamos estadisticas
+
+            const stats = document.querySelectorAll('.gm-stat-val');
+            stats[0].innerHTML = temp   + '<span class="gm-stat-unit">°C</span>';
+            stats[1].innerHTML = lluvia + '<span class="gm-stat-unit">%</span>';
+            stats[2].innerHTML = viento + '<span class="gm-stat-unit">km/h</span>';
+            stats[3].innerHTML = uv     + '<span class="gm-stat-unit"> mod</span>';
+
+            // cambiamos el color segun puntuacion
+
+            const pill = document.querySelector('.gm-pill');
+            pill.style.background = punt === 'Birdie' ? '#1D9E75' :
+                                    punt === 'Par'    ? '#B87514' : '#A32D2D';
+        });
+    });
+</script>
 </body>
 </html>

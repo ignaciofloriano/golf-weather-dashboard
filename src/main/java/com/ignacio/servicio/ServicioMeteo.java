@@ -29,15 +29,15 @@ public class ServicioMeteo {
         String json = hacerPeticion();
         RespuestaMeteo respuesta = new Gson().fromJson(json, RespuestaMeteo.class);
 
-        return new DatosMeteoHoy(
-                respuesta.current.temperatura,
-                respuesta.current.sensacionTermica,
-                respuesta.current.lluvia,
-                respuesta.current.viento,
-                (int) respuesta.current.uv,
+        return new DatosMeteoHoy( // CAMBIO DATOS CURRENT A DAILY PARA UNA PREVISION GENERAL
+                respuesta.daily.temperaturaMax.get(0),
+                respuesta.daily.temperaturaMax.get(0) - 2,
+                respuesta.daily.probabilidadLluvia.get(0),
+                respuesta.daily.vientoMax.get(0),
+                respuesta.daily.uvMax.get(0).intValue(),
                 respuesta.current.humedad,
                 calcularDireccionViento(),
-                calcularVisibilidad(respuesta.current.lluvia)
+                calcularVisibilidad(respuesta.daily.probabilidadLluvia.get(0))
         );
     }
 

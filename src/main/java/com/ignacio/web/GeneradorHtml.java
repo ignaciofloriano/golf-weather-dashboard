@@ -55,7 +55,14 @@ public class GeneradorHtml {
 
             sb.append(String.format(
                     """
-                    <div class="gm-day%s">
+                    <div class="gm-day%s" 
+                         data-temp="%d"
+                         data-lluvia="%d"
+                         data-viento="%.1f"
+                         data-uv="%d"
+                         data-nombre="%s"
+                         data-puntuacion="%s"
+                         style="cursor:pointer">
                       <p class="gm-day-name">%s</p>
                       <p class="gm-day-temp">%d°</p>
                       <p class="gm-day-rain">%d%%</p>
@@ -63,6 +70,12 @@ public class GeneradorHtml {
                     </div>
                     """,
                     hoy,
+                    (int) dia.getTemperaturaMax(),
+                    (int) dia.getProbabilidadLluvia(),
+                    dia.getVientoMax(),
+                    dia.getUv(),
+                    dia.getNombreDia(),
+                    formatearPuntuacion(p),
                     dia.getNombreDia(),
                     (int) dia.getTemperaturaMax(),
                     (int) dia.getProbabilidadLluvia(),
