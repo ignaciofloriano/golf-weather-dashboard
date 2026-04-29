@@ -20,18 +20,23 @@ public class PrediccionDia {
 
     // getters
 
-    public String getNombreDia()           {
-        return nombreDia; }
+    public String getNombreDia() {
+        return nombreDia;
+    }
 
-    public double getTemperaturaMax()      {
-        return temperaturaMax; }
+    public double getTemperaturaMax() {
+        return temperaturaMax;
+    }
 
-    public double getProbabilidadLluvia()  {
-        return probabilidadLluvia; }
+    public double getProbabilidadLluvia() {
+        return probabilidadLluvia;
+    }
 
-    public double getVientoMax()           {
-        return vientoMax; }
+    public double getVientoMax() {
+        return vientoMax;
+    }
 
-    public int getUv()                     {
-        return uv; }
+    public int getUv() {
+        return uv;
+    }
 }

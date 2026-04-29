@@ -7,11 +7,11 @@ public class AnalizadorGolf {
 
     // maximos y minimos para calcular la puntuación del dia
 
-    private static final double LLUVIA_BIRDIE  = 15.0;
-    private static final double LLUVIA_PAR     = 50.0;
-    private static final double VIENTO_BIRDIE  = 20.0;
-    private static final double VIENTO_PAR     = 40.0;
-    private static final double TEMP_MIN       = 8.0;
+    private static final double LLUVIA_BIRDIE = 15.0;
+    private static final double LLUVIA_PAR = 50.0;
+    private static final double VIENTO_BIRDIE = 20.0;
+    private static final double VIENTO_PAR = 40.0;
+    private static final double TEMP_MIN = 8.0;
 
     public enum Puntuacion {
         BIRDIE, PAR, BOGEY

@@ -63,15 +63,15 @@ public class GeneradorNota {
 
     private static String nombreCompleto(String abreviacion) {
         return switch (abreviacion) {
-            case "Hoy"  -> "Hoy";
-            case "Lun"  -> "El lunes";
-            case "Mar"  -> "El martes";
-            case "Mié"  -> "El miércoles";
-            case "Jue"  -> "El jueves";
-            case "Vie"  -> "El viernes";
-            case "Sáb"  -> "El sábado";
-            case "Dom"  -> "El domingo";
-            default     -> abreviacion;
+            case "Hoy" -> "Hoy";
+            case "Lun" -> "El lunes";
+            case "Mar" -> "El martes";
+            case "Mié" -> "El miércoles";
+            case "Jue" -> "El jueves";
+            case "Vie" -> "El viernes";
+            case "Sáb" -> "El sábado";
+            case "Dom" -> "El domingo";
+            default -> abreviacion;
         };
     }
 }

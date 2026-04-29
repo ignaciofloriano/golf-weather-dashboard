@@ -1,6 +1,7 @@
 package com.ignacio.api;
 
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 // clase para reflejar DailyMeteo
